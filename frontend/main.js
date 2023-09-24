@@ -1,20 +1,19 @@
-window.addEventListener('DOMContentLoaded', (event) =>{
+window.addEventListener('DOMContentLoaded', (event) => {
     getVisitCount();
 })
 
 const functionApiUrl = 'https://gavinazureresume.azurewebsites.net/api/GetResumeCounter?code=HDSTEXueoITmydDuCQuTmA_xNKIguQ2CU0hRCkmOd_u_AzFu7KEo7A==';
-const localfunctionApi = 'http://localhost:7071/api/GetResumeCounter';
+const localFunctionApi = 'http://localhost:7071/api/GetResumeCounter';
 
 const getVisitCount = () => {
-    let count = 30;
-    fetch(functionApiUrl).then(response => {
-        return response.json()
-    }).then(response =>{
-        console.log("Website called function API.");
-        count = response.count;
-        document.getElementById("counter").innerText = count;
-    }).catch(function(error){
-         console.log(error);
-    });
-    return count;
+    fetch(functionApiUrl)
+        .then(response => response.json())
+        .then(response => {
+            console.log("Website called function API.");
+            const count = response.count;
+            document.getElementById("counter").innerText = count;
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
