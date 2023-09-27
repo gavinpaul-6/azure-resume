@@ -5,3 +5,4 @@ My own Azure resume, following [ACG project video.](https://www.youtube.com/watc
 
 - Frontend folder contains the website.
 - main.js contains visitor counter code.
+
