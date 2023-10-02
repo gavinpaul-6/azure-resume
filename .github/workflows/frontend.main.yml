@@ -1,5 +1,4 @@
-name: deploy_frontend
-#Deploys when push is made form frontend folder -- updated 10.2.2023
+name: Blob storage website CI
 
 on:
     push:
@@ -18,7 +17,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name gavinazureresume --auth-mode key -d '$web' -s frontend/
+            az storage blob upload-batch --account-name gavinazureresume --auth-mode key -d '$web' -s .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
