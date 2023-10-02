@@ -23,7 +23,7 @@ jobs:
 
       - name: Purge CDN Endpoint
         run: |
-          az cdn endpoint purge --content-paths "/*" --profile-name gavinazureresume --name gavinazureresume.azureedge.net --resource-group gavinazureresume-rg
+          az cdn endpoint purge --content-paths "/*" --profile-name gavinazureresume --name gavinazureresume --resource-group gavinazureresume-rg
         working-directory: ${{ github.workspace }}
 
       - name: Azure Logout
