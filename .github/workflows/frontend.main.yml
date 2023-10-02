@@ -18,7 +18,7 @@ jobs:
 
       - name: Upload to Blob Storage
         run: |
-          az storage blob upload-batch --account-name gavinazureresume --auth-mode key -d '$web' -s . --overwrite
+          az storage blob upload-batch --account-name gavinazureresume --auth-mode key -d '$web' --source frontend --overwrite
         working-directory: ${{ github.workspace }}
 
       - name: Purge CDN Endpoint
