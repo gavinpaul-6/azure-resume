@@ -18,12 +18,12 @@ jobs:
 
       - name: Upload to Blob Storage
         run: |
-          az storage blob upload-batch --account-name gavinazureresume --auth-mode key -d '$web' -s .
+          az storage blob upload-batch --account-name gavinazureresume --auth-mode key -d '$web' -s . --overwrite
         working-directory: ${{ github.workspace }}
 
       - name: Purge CDN Endpoint
         run: |
-          az cdn endpoint purge --content-paths "/*" --profile-name gavinazureresume --name gavinazureresume --resource-group gavinazureresume-rg
+          az cdn endpoint purge --content-paths "/*" --profile-name gavinazureresume --name gavinazureresume --resource-group gavinazureresume-rg --no-wait
         working-directory: ${{ github.workspace }}
 
       - name: Azure Logout
