@@ -1,5 +1,5 @@
 name: deploy_frontend
-#Deploys when push is made form frontend folder
+#Deploys when push is made form frontend folder -- updated 10.2.2023
 
 on:
     push:
